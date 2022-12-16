@@ -1,0 +1,31 @@
+
+// Array of all the characters associated with this account
+
+{
+    "characters": [
+        {
+            "name": "",
+            "race": "",
+            "class": "",
+            "eye_color": "",
+            "age": "",
+            "traits": {
+                "name": "score"
+            },
+            "saves": {
+                "name": "score"
+            },
+            "skills": {
+                "name": "score"
+            },
+            "atttributes": {
+                "name": "score"
+            }
+
+
+
+        }
+    ]
+}[
+    "user"
+]

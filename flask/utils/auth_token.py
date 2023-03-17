@@ -44,6 +44,18 @@ def login(username: str, password: str) -> bool:
     return None
 
 
+def signup(username: str, password: str) -> bool:
+    # Generate hashed password
+    hashed_password = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+    conn = db()
+    curr = conn.cursor(dictionary=True)
+    sql = "insert into pathfinder.user (username, password) values (%(username)s, %(hashed_password)s)"
+    curr.execute(sql, {"username": username, "hashed_password": hashed_password})
+    conn.commit()
+
+    return True
+
+
 def decrypt_token(token: str) -> dict:
     fernet = Fernet(globals.key)    
     token = fernet.decrypt(token.encode()).decode()

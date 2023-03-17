@@ -1,6 +1,8 @@
 <template>
-    <div>
+     <div class="h-screen w-screen flex pt-12 ">
+        <div class="flex-grow"></div>
         <router-view></router-view>
+        <div class="flex-grow"></div>
     </div>
 </template>
 

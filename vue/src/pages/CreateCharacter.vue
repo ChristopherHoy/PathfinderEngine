@@ -1,15 +1,11 @@
 <template>
-    <Choices></Choices>
+    <router-view></router-view>
 </template>
 
 <script>
-import Choices from "./Choices.vue"
-
 export default {
-    
-    name: "Home",
-    components: {Choices},
-    
+    name: "CreateCharacter",
+
     props: {},
 
     data: function data() {

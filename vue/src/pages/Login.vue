@@ -58,16 +58,16 @@ export default {
     },
 
     mounted() {
-        window.addEventListener("token", this.token_received);
     },
 
     methods: {
         submit() {
-            emitters.login.emit(this.username, this.password);
-        },
-
-        token_received(data) {
-            this.$router.push("Home");
+            emitters.login.emit(this.username, this.password).then((response) => {
+                if (response.status === "ok") {
+                    window.store.setToken(response.data)
+                    this.$router.push("Home");
+                }
+            });
         },
 
         sign_up() {},
